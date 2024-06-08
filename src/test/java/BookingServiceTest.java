@@ -22,14 +22,14 @@ public class BookingServiceTest {
     }
 
     @Test
-    void testCreateBookingWithMockTrue() throws CantBookException {
-        logger.info("Запуск теста CreateBookingWithMockTrue");
+    void testCreateBookingWithMock() throws CantBookException {
+        logger.info("Запуск теста CreateBookingWithMock");
 
         when(mockBookingService.book(anyString(), any(LocalDateTime.class), any(LocalDateTime.class))).thenReturn(true);
         logger.debug("Создание брони успешно");
 
         Assertions.assertTrue(mockBookingService.book("Новая бронь", LocalDateTime.now(), LocalDateTime.now()));
-        logger.info("Тест CreateBookingWithMockTrue завершен");
+        logger.info("Тест CreateBookingWithMock завершен");
     }
 
     @Test
